@@ -12,11 +12,17 @@
     </form>
 
     <script>
-        // Récupère la valeur saisie dans le champ de saisie
-        var userInput = document.getElementById('inputMessage').value;
-
-        // Affiche la valeur saisie dans la page (exploitation de la faille XSS)
-        document.write('<p>Votre message : ' + userInput + '</p>');
-    </script>
+        var form = document.querySelector('form');
+        form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        var inputText = document.getElementById('inputMessage').value;
+        document.write("<p>Vous avez saisi : " + inputText + "</p>");
+        
+        window.setTimeout(function() {
+        window.location.reload();
+        }, 5000);
+        });
+        </script>
 </body>
 </html>
