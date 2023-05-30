@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>Exemple de faille XSS</title>
+</head>
+<body>
+    <h1>Exemple de faille XSS</h1>
+    
+    <form>
+        <label for="inputMessage">Entrez votre message :</label>
+        <input type="text" id="inputMessage" name="message">
+        <button type="submit">Envoyer</button>
+    </form>
+
+    <script>
+        // Récupère la valeur saisie dans le champ de saisie
+        var userInput = document.getElementById('inputMessage').value;
+
+        // Affiche la valeur saisie dans la page (exploitation de la faille XSS)
+        document.write('<p>Votre message : ' + userInput + '</p>');
+    </script>
+</body>
+</html>
