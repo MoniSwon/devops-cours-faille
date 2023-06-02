@@ -1,0 +1,16 @@
+name: Call workflows
+
+on:
+    push:
+      branches: ["main" ]
+    pull_request:
+      branches: ["main"]
+
+jobs:
+  call-snyk-security:
+    uses: MoniSwon/devops-cours-faille/.github/workflows/snyk-security.yml@main
+
+  call-vercel:
+    uses: MoniSwon/devops-cours-faille/.github/workflows/preview.yml@main
+    needs: call-snyk-security
+    
