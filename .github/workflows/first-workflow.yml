@@ -15,8 +15,14 @@ on:
 jobs:
   snyk:
     uses: MoniSwon/devops-cours-faille/.github/workflows/snyk-security.yml@main
+    secrets:
+      SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
   Deploy-Preview:
     uses: MoniSwon/devops-cours-faille/.github/workflows/preview.yml@main
     needs: snyk
+    secrets:
+        VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+        VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
     
