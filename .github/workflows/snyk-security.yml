@@ -18,6 +18,9 @@
 
 name: Snyk Security
 
+env:
+  SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
 on:
   workflow_call:
     secrets:
