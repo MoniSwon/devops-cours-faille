@@ -7,10 +7,10 @@ on:
       branches: ["main"]
 
 jobs:
-  call-snyk-security:
+  snyk:
     uses: MoniSwon/devops-cours-faille/.github/workflows/snyk-security.yml@main
 
-  call-vercel:
+  Deploy-Preview:
     uses: MoniSwon/devops-cours-faille/.github/workflows/preview.yml@main
-    needs: call-snyk-security
+    needs: snyk
     
