@@ -19,8 +19,8 @@
 name: Snyk Security
 
 env:
-        # This is where you will need to introduce the Snyk API token created with your Snyk account
-        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+          # This is where you will need to introduce the Snyk API token created with your Snyk account
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
 on:
   push:
@@ -54,7 +54,7 @@ jobs:
         # Runs Snyk Code (SAST) analysis and uploads result into GitHub.
         # Use || true to not fail the pipeline
       - name: Snyk Code test
-        run: snyk code test --sarif > snyk-code.sarif  || true
+        run: snyk code test --sarif > snyk-code.sarif || true
 
         # Push the Snyk Code results into GitHub Code Scanning tab
       - name: Upload result to GitHub Code Scanning
