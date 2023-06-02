@@ -20,13 +20,13 @@ name: Snyk Security
 
 on:
   workflow_call:
+    secrets:
+      SNYK_TOKEN:
+        required: true
 
 permissions:
   contents: read
   
-env:
-          # This is where you will need to introduce the Snyk API token created with your Snyk account
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
 jobs:
   snyk:
