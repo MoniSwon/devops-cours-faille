@@ -9,6 +9,8 @@ on:
         required: true
       VERCEL_PROJECT_ID:
         required: true
+      GITHUB_TOKEN:
+        required: true
     
 jobs:
   Deploy-Preview:
