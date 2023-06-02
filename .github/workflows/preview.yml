@@ -9,7 +9,6 @@ on:
         required: true
       VERCEL_PROJECT_ID:
         required: true
-
     
 jobs:
   Deploy-Preview:
